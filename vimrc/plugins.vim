@@ -2,37 +2,37 @@
 set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
 set rtp+=/usr/bin/fzf
 
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'	      " let Vundle manage Vundle, required
+call plug#begin('~/.vim/plugged')
 
 " Vim styling
-Plugin 'joshdick/onedark.vim'         " Theme
-Plugin 'webdevel/tabulous'            " Tabline design
-Plugin 'ryanoasis/vim-devicons'	      " Add dev icons to NERDTree & airline
-Plugin 'vim-airline/vim-airline'      " Customize the statusline
-Plugin 'scrooloose/nerdtree'	      " File system explorer in vim
-Plugin 'gko/vim-coloresque'	      " Preview colors
+Plug 'joshdick/onedark.vim'         " Theme
+Plug 'webdevel/tabulous'            " Tabline design
+Plug 'ryanoasis/vim-devicons'	      " Add dev icons to NERDTree & airline
+Plug 'vim-airline/vim-airline'      " Customize the statusline
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }  " File system explorer in vim
+Plug 'gko/vim-coloresque'	      " Preview colors
 
 " Utilities
-Plugin 'tpope/vim-commentary'         " (Un)Comment lines
-Plugin 'tpope/vim-fugitive'	      " Git cli in Vim
-Plugin 'mhinz/vim-sayonara'           " Properly close buffers
-Plugin 'junegunn/fzf.vim'             " FuzzyFinder in vim
-Plugin 'chiedo/vim-case-convert'      " Easy text casing conversion
-Plugin 'Shougo/deoplete.nvim'         " Autocompletion
-Plugin 'tpope/vim-eunuch'             " UNIX shell commands in vim
-Plugin 'airblade/vim-gitgutter'       " Git gutter in vim
+Plug 'tpope/vim-commentary'         " (Un)Comment lines
+Plug 'tpope/vim-fugitive'	      " Git cli in Vim
+Plug 'mhinz/vim-sayonara'           " Properly close buffers
+Plug 'junegunn/fzf.vim'             " FuzzyFinder in vim
+Plug 'chiedo/vim-case-convert'      " Easy text casing conversion
+" Plug 'Shougo/deoplete.nvim'         " Autocompletion
+Plug 'tpope/vim-eunuch'             " UNIX shell commands in vim
+Plug 'airblade/vim-gitgutter'       " Git gutter in vim
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " Completion
 
 " Language support
-Plugin 'vim-syntastic/syntastic'      " Syntax checking for Vim
-Plugin 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
-Plugin 'derekwyatt/vim-scala'         " Scala support
-Plugin 'ensime/ensime-vim'            " Lots of love for scala
-" Plugin 'majutsushi/tagbar'            " Class outline viewer
-Plugin 'chrisbra/csv.vim'	      " let Vundle manage Vundle, required
+Plug 'vim-syntastic/syntastic'      " Syntax checking for Vim
+Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
+Plug 'derekwyatt/vim-scala'         " Scala support
+Plug 'ensime/ensime-vim'            " Lots of love for scala
+" Plug 'majutsushi/tagbar'            " Class outline viewer
+Plug 'chrisbra/csv.vim'	      " let Vundle manage Vundle, required
+Plug 'moll/vim-node'                " Node.JS
 
-call vundle#end()		      " required
+call plug#end()
 
 filetype plugin indent on	      " Load plugins according to detected filetype
 
