@@ -1,5 +1,4 @@
 " set the runtime path to include Vundleand fzf
-set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
 set rtp+=/usr/bin/fzf
 
 call plug#begin('~/.vim/plugged')
@@ -21,13 +20,14 @@ Plug 'chiedo/vim-case-convert'      " Easy text casing conversion
 " Plug 'Shougo/deoplete.nvim'         " Autocompletion
 Plug 'tpope/vim-eunuch'             " UNIX shell commands in vim
 Plug 'airblade/vim-gitgutter'       " Git gutter in vim
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " Completion
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Completion
 
 " Language support
 Plug 'vim-syntastic/syntastic'      " Syntax checking for Vim
 Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
-Plug 'derekwyatt/vim-scala'         " Scala support
-Plug 'ensime/ensime-vim'            " Lots of love for scala
+" Plug 'derekwyatt/vim-scala'         " Scala support
+" Plug 'natebosch/vim-lsc'            " Scala language server
+" Plug 'ensime/ensime-vim'            " Lots of love for scala
 " Plug 'majutsushi/tagbar'            " Class outline viewer
 Plug 'chrisbra/csv.vim'	      " let Vundle manage Vundle, required
 Plug 'moll/vim-node'                " Node.JS
@@ -57,20 +57,20 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
 " Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_scala_scalastyle_config_file = "scalastyle-config.xml"
-highlight SyntasticErrorSign guifg=white guibg=red
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_scala_scalastyle_config_file = "scalastyle-config.xml"
+" highlight SyntasticErrorSign guifg=white guibg=red
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources={}
-let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
-let g:deoplete#omni#input_patterns={}
-let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#sources={}
+" let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
+" let g:deoplete#omni#input_patterns={}
+" let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 " NERDTree
 let NERDTreeShowHidden=1        " Show hidden files
@@ -88,4 +88,13 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " vim-scala
-let g:scala_scaladoc_indent = 0
+" let g:scala_scaladoc_indent = 0
+" au BufRead,BufNewFile *.sbt set filetype=scala
+
+" vim-lsc
+" let g:lsc_server_commands = {
+"   \ 'scala': {
+"   \    'command': '/usr/local/bin/metals-vim',
+"   \    'log_level': 'Log'
+"   \  }
+"   \}

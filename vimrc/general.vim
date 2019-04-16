@@ -18,7 +18,7 @@ set ttyfast                           " Faster redrawing, for gitgutter
 set lazyredraw                        " Only redraw when necessary.
 set cursorline                        " Find the current line quickly.
 set scrolloff =5
-autocmd BufWritePre * :%s/\s\+$//e " Auto remove trailing on save
+autocmd BufWritePre * :%s/\s\+$//e    " Auto remove trailing on save
 set splitbelow
 set splitright
 
