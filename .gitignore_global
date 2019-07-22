@@ -2,6 +2,7 @@
 out/
 .idea
 .idea_modules
+.attach_pid*
 
 # JVM
 target/

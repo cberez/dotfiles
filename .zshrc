@@ -53,6 +53,9 @@ export MAVEN_OPTS="-Xmx2048m"
 # Custom Java install
 export PATH=/usr/java/current/bin:$PATH
 
+# scala-metals
+export PATH=/usr/local/bin/metals-vim:$PATH
+
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude target'
 

@@ -12,3 +12,8 @@ path = /path/to/czoo/.gitconfig
 excludesfile = /path/to/czoo/.gitignore_global
 ```
 
+## Zsh setup
+
+- Install Zsh
+- Install [nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+- Source in `~/.zshrc`
