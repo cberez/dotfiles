@@ -51,6 +51,6 @@ echo yay -S trash-cli htop
 yay -S trash-cli htop
 
 echo # Media
-echo yay -S vlc thunderbird opera-developer chromium chromium-widevine
-yay -S vlc thunderbird opera-developer chromium chromium-widevine
+echo yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox
+yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox
 

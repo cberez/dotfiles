@@ -197,3 +197,6 @@ exec --no-startup-id udiskie -a -t
 
 # Wifi menu
 exec --no-startup-id nm-applet
+
+# Dropbox
+exec dropbox
