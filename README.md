@@ -10,6 +10,7 @@ Run `arch/install.sh` as sudo (untested yet) and then
 stow git
 stow i3 
 stow pcmanfm
+stow ranger
 stow vim
 stow xinit
 stow xresources
