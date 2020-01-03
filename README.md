@@ -1,6 +1,6 @@
 # Dotfiles
 
-Uses [GNU Stow]() (inspiration from [here](github.com/himmAllRight/dotfiles²))
+Uses [GNU Stow](https://www.gnu.org/software/stow/) (inspiration from [here](https://github.com/himmAllRight/dotfiles))
 
 ## Setup
 
