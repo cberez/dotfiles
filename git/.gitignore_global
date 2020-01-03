@@ -1,0 +1,13 @@
+# IntelliJ
+out/
+.idea
+.idea_modules
+.attach_pid*
+
+# JVM
+target/
+*.class
+*.log
+
+# Python
+venv/

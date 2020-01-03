@@ -1,19 +1,18 @@
-# My confs
+# Dotfiles
 
-## Git setup
+Uses [GNU Stow]() (inspiration from [here](github.com/himmAllRight/dotfiles²))
 
-Add to `~/.gitignore`
+## Setup
+
+Run `arch/install.sh` as sudo (untested yet) and then
 
 ```
-[include]
-path = /path/to/czoo/.gitconfig
-
-[core]
-excludesfile = /path/to/czoo/.gitignore_global
+stow git
+stow i3 
+stow pcmanfm
+stow vim
+stow xinit
+stow xresources
+stow zsh
 ```
 
-## Zsh setup
-
-- Install Zsh
-- Install [nerd fonts](https://github.com/ryanoasis/nerd-fonts)
-- Source in `~/.zshrc`
