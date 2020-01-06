@@ -106,7 +106,7 @@ color onedark			      " Load color theme
 
 " General
 set guicursor=a:blinkon0              " Make cursor not blink
-set termguicolors
+"set termguicolors                    " Breaks Urxvt colors
 set number                            " Show line numbers
 set showmode                          " Show current mode in command-line.
 set showcmd                           " Show already typed keys when more are expected.
