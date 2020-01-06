@@ -1,19 +1,14 @@
 # Dotfiles
 
-Uses [GNU Stow](https://www.gnu.org/software/stow/) (inspiration from [here](https://github.com/himmAllRight/dotfiles))
+Uses [GNU Stow](https://www.gnu.org/software/stow/)
 
 ## Setup
 
-Run `arch/install.sh` as sudo (untested yet) and then
+Clone this repo in your home's root, run `arch/install.sh` (untested yet) and then
 
+```bash
+stow git vim zsh #...
 ```
-stow git
-stow i3 
-stow pcmanfm
-stow ranger
-stow vim
-stow xinit
-stow xresources
-stow zsh
-```
+
+If cloned elsewhere than in home, set parameter `--target=~/`.
 
