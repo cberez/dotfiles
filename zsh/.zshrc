@@ -12,10 +12,8 @@ SAVEHIST=1000
 ZSH=/usr/share/oh-my-zsh/
 
 plugins=(
-  git,
-  alias-tips,
-  bash,
-  bd,
+  git
+#  alias-tips, sourced after aur install
   colored-man-pages
 )
 
@@ -25,6 +23,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/alias-tips/alias-tips.plugin.zsh
 
 # Theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -39,7 +38,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
 #-----------------------------
 export LC_COLLATE="C" # Display . prefixed files/dirs on top in `ll`
 
-# vim editor 
+# vim editor
 export EDITOR="vim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR

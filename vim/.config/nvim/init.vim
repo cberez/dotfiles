@@ -30,7 +30,7 @@ Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .con
 " Plug 'natebosch/vim-lsc'            " Scala language server
 " Plug 'ensime/ensime-vim'            " Lots of love for scala
 " Plug 'majutsushi/tagbar'            " Class outline viewer
-Plug 'chrisbra/csv.vim'	      " let Vundle manage Vundle, required
+Plug 'chrisbra/csv.vim'	            " CSV
 Plug 'moll/vim-node'                " Node.JS
 
 call plug#end()
