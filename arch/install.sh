@@ -22,8 +22,8 @@ echo yay -S bluez bluez-utils blueman
 yay -S bluez bluez-utils blueman
 
 echo # Desktop env
-echo yay -S i3 dmenu udisks2 udiskie
-yay -S i3 dmenu udisks2 udiskie
+echo yay -S i3 dmenu udisks2 udiskie tabbed
+yay -S i3 dmenu udisks2 udiskie tabbed
 
 echo # Shell
 echo yay -S rxvt-unicode oh-my-zsh zsh-theme-powerlevel9k
@@ -51,6 +51,6 @@ echo yay -S trash-cli htop fzf
 yay -S trash-cli htop fzf
 
 echo # Media
-echo yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox
-yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox
+echo yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox surf
+yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox surf
 
