@@ -6,8 +6,8 @@ echo pacman -S sudo yay
 pacman -S yay
 
 echo # Network
-echo yay -S wpa_supplicant networkmanager network-manager-applet 
-yay -S wpa_supplicant networkmanager network-manager-applet 
+echo yay -S wpa_supplicant networkmanager network-manager-applet
+yay -S wpa_supplicant networkmanager network-manager-applet
 
 echo # Xorg
 echo yay -S xorg-server xorg-xinit xorg-xrandr arandr xorg-xbacklight xorg-xev feh
@@ -22,8 +22,8 @@ echo yay -S bluez bluez-utils blueman
 yay -S bluez bluez-utils blueman
 
 echo # Desktop env
-echo yay -S i3 dmenu udisks2 udiskie 
-yay -S i3 dmenu udisks2 udiskie 
+echo yay -S i3 dmenu udisks2 udiskie
+yay -S i3 dmenu udisks2 udiskie
 
 echo # Shell
 echo yay -S rxvt-unicode oh-my-zsh zsh-theme-powerlevel9k
@@ -47,8 +47,8 @@ echo yay -S stow
 yay -S stow
 
 echo # Utils
-echo yay -S trash-cli htop
-yay -S trash-cli htop
+echo yay -S trash-cli htop fzf
+yay -S trash-cli htop fzf
 
 echo # Media
 echo yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox

@@ -24,6 +24,8 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/alias-tips/alias-tips.plugin.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # Theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
