@@ -32,6 +32,7 @@ Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .con
 " Plug 'majutsushi/tagbar'            " Class outline viewer
 Plug 'chrisbra/csv.vim'	            " CSV
 Plug 'moll/vim-node'                " Node.JS
+Plug 'fatih/vim-go'                 " Go
 
 call plug#end()
 
