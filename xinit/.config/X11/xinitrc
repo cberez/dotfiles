@@ -1,7 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$HOME/.config/X11/xresources
+usermodmap=$HOME/.config/X11/xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -23,6 +23,12 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-feh --bg-scale ~/images/bg/jae_lee_jl.jpg
-exec i3 > ~/.i3.log 2>&1
+# Set background
+feh --bg-scale $XDG_CONFIG_HOME/feh/jae_lee_jl.jpg
+
+# Run udiskie
+exec udiskie &
+
+# Set logfile
+exec i3 > ~/.local/share/i3.log 2>&1
+

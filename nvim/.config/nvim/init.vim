@@ -1,7 +1,7 @@
 set nocompatible		" be iMproved, required
 filetype off			" required
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Vim styling
 Plug 'tpope/vim-sensible'           " Defaults
@@ -22,10 +22,12 @@ Plug 'chiedo/vim-case-convert'      " Easy text casing conversion
 Plug 'tpope/vim-eunuch'             " UNIX shell commands in vim
 Plug 'airblade/vim-gitgutter'       " Git gutter in vim
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Completion
+Plug 'junegunn/goyo.vim'            " Distraction free mode
 
 " Language support
 Plug 'vim-syntastic/syntastic'      " Syntax checking for Vim
 Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
+Plug 'stephpy/vim-yaml'
 " Plug 'derekwyatt/vim-scala'         " Scala support
 " Plug 'natebosch/vim-lsc'            " Scala language server
 " Plug 'ensime/ensime-vim'            " Lots of love for scala
@@ -33,6 +35,7 @@ Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .con
 Plug 'chrisbra/csv.vim'	            " CSV
 Plug 'moll/vim-node'                " Node.JS
 Plug 'fatih/vim-go'                 " Go
+Plug 'hashivim/vim-terraform'       " Terraform
 
 call plug#end()
 
@@ -76,15 +79,15 @@ let g:airline_right_alt_sep = ''
 
 " NERDTree
 let NERDTreeShowHidden=1        " Show hidden files
-autocmd vimenter * NERDTree	" Open on vim startup
+"autocmd vimenter * NERDTree	" Open on vim startup
 
 				" Open on vim startup if no file specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 				" Open on vim startup on opening directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 				" Close vim if only window open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -109,6 +112,7 @@ color onedark			      " Load color theme
 set guicursor=a:blinkon0              " Make cursor not blink
 "set termguicolors                    " Breaks Urxvt colors
 set number                            " Show line numbers
+set relativenumber                    " Show line number relative to cursor
 set showmode                          " Show current mode in command-line.
 set showcmd                           " Show already typed keys when more are expected.
 set mouse =a                          " Enable mouse support
