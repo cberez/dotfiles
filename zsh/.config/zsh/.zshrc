@@ -64,7 +64,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
    source /etc/profile.d/vte.sh
 fi
 #source /usr/share/zsh/plugins/alias-tips/alias-tips.plugin.zsh
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # NVM
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
