@@ -82,6 +82,19 @@ fi
 #-----------------------------
 # Sources
 #-----------------------------
+# Scripts
+SCRIPTS_DIR="$HOME/.scripts"
+if [[ -d "$SCRIPTS_DIR" ]]; then
+  SCRIPTS_PATH="$SCRIPTS_DIR"
+  [[ -L $SCRIPTS_PATH ]] && SCRIPTS_PATH=$(readlink "$SCRIPTS_PATH")
+  for script in $(find "$SCRIPTS_PATH" -type f); do
+    [[ -f "$script" && "$script" != *".DS_Store"* ]] && {
+      source "$script"
+    }
+  done
+fi
+
+# Others
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
    source /etc/profile.d/vte.sh
 fi
