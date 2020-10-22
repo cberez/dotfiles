@@ -12,6 +12,9 @@
 [credential]
     helper = cache
 
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
 # so much color
 [color]
     ui = true

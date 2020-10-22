@@ -11,3 +11,8 @@ target/
 
 # Python
 venv/
+
+.env
+
+# MacOS
+.DS_Store

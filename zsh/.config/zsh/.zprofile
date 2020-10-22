@@ -21,6 +21,6 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if command -v systemctl &> /dev/null && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi

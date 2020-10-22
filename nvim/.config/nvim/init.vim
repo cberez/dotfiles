@@ -14,7 +14,7 @@ Plug 'gko/vim-coloresque'	      " Preview colors
 
 " Utilities
 Plug 'tpope/vim-commentary'         " (Un)Comment lines
-Plug 'tpope/vim-fugitive'	      " Git cli in Vim
+Plug 'tpope/vim-fugitive'	    " Git cli in Vim
 Plug 'mhinz/vim-sayonara'           " Properly close buffers
 Plug 'junegunn/fzf.vim'             " FuzzyFinder in vim
 Plug 'chiedo/vim-case-convert'      " Easy text casing conversion
@@ -26,16 +26,13 @@ Plug 'junegunn/goyo.vim'            " Distraction free mode
 
 " Language support
 Plug 'vim-syntastic/syntastic'      " Syntax checking for Vim
-Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
+" Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
 Plug 'stephpy/vim-yaml'
-" Plug 'derekwyatt/vim-scala'         " Scala support
-" Plug 'natebosch/vim-lsc'            " Scala language server
-" Plug 'ensime/ensime-vim'            " Lots of love for scala
-" Plug 'majutsushi/tagbar'            " Class outline viewer
 Plug 'chrisbra/csv.vim'	            " CSV
-Plug 'moll/vim-node'                " Node.JS
-Plug 'fatih/vim-go'                 " Go
-Plug 'hashivim/vim-terraform'       " Terraform
+" Plug 'moll/vim-node'                " Node.JS
+Plug 'pangloss/vim-javascript'      " JS
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
+" Plug 'hashivim/vim-terraform'       " Terraform
 
 call plug#end()
 
@@ -67,7 +64,6 @@ let g:airline_right_alt_sep = ''
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_aggregate_errors = 1
-" let g:syntastic_scala_scalastyle_config_file = "scalastyle-config.xml"
 " highlight SyntasticErrorSign guifg=white guibg=red
 
 " Deoplete
@@ -75,35 +71,21 @@ let g:airline_right_alt_sep = ''
 " let g:deoplete#sources={}
 " let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
 " let g:deoplete#omni#input_patterns={}
-" let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 
 " NERDTree
 let NERDTreeShowHidden=1        " Show hidden files
 "autocmd vimenter * NERDTree	" Open on vim startup
 
 				" Open on vim startup if no file specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 				" Open on vim startup on opening directory
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 				" Close vim if only window open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" vim-scala
-" let g:scala_scaladoc_indent = 0
-" au BufRead,BufNewFile *.sbt set filetype=scala
-
-" vim-lsc
-" let g:lsc_server_commands = {
-"   \ 'scala': {
-"   \    'command': '/usr/local/bin/metals-vim',
-"   \    'log_level': 'Log'
-"   \  }
-"   \}
-
 
 syntax on			      " Enable syntax highlighting
 color onedark			      " Load color theme
@@ -134,7 +116,7 @@ set splitright
 set autoindent			      " Indent according to previous line.
 set expandtab			      " Use spaces instead of tabs.
 set softtabstop =2		      " Tab key indents by 2 spaces.
-set shiftwidth  =2		      " >> indents by 4 spaces.
+set shiftwidth  =2		      " >> indents by 2 spaces.
 set shiftround			      " >> indents to next multiple of 'shiftwidth'.
 
 " Encoding
@@ -148,18 +130,17 @@ set guifont=Hack\ Regular\ Nerd\ Font\ Complete
 set rtp+=/usr/bin/fzf
 
 " Setup the same behavior as on every IDE with automatic tag close
-inoremap <> <><Left>
-inoremap () ()<Left>
-inoremap {} {}<Left>
-inoremap [] []<Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap `` ``<Left>
+" inoremap <> <><Left>
+" inoremap () ()<Left>
+" inoremap {} {}<Left>
+" inoremap [] []<Left>
+" inoremap "" ""<Left>
+" inoremap '' ''<Left>
+" inoremap `` ``<Left>
 
 " Mappings
 let mapleader = ","
 " Clear search highlight
-
 nnoremap cs :noh<CR>
 " Exiting buffer / window
 nnoremap qq :Sayonara!<CR>
@@ -191,14 +172,14 @@ nnoremap <C-w>v :vertical new<CR>
 nnoremap <C-w>vt :topleft vertical new<CR>
 nnoremap <C-w>vb :botright vertical new<CR>
 " Tabs
-nnoremap tnn :tabnew<CR>
+nnoremap tnt :tabnew<CR>
 nnoremap tn :tabnext<CR>
 nnoremap tp :tabprevious<CR>
 nnoremap tl :tablast<CR>
 nnoremap tf :tabfirst<CR>
 " ctags
-nnoremap <leader><space> <C-]>
+" nnoremap <leader><space> <C-]>
 " NERDTree
-nnoremap ntr :NERDTree<CR>
+nnoremap ntr :NERDTreeToggle<CR>
 " Vim tagbar
-nmap tgb :TagbarToggle<CR>
+" nmap tgb :TagbarToggle<CR>
