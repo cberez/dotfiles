@@ -1,10 +1,10 @@
 [user]
-    email = cesar@adaltas.com #me@cesarberezowski.com
-    name = Cesar Berezowski
+	email = cesar.berezowski@urbancampus.com
+	name = Cesar Berezowski
 
 [alias]
     lgb = log --graph --abbrev-commit --oneline --date=relative --branches --pretty=format:'%C(bold green)%h %d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-    puo = push -u origin
+    puo = "!git push -u origin \"$(git branch --show-current)\""
 
 [pull]
     rebase = true
