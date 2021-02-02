@@ -8,6 +8,7 @@ if [ "$OSTYPE" = linux-gnu ]; then
     ZSH=/usr/share/oh-my-zsh/
 else
     ZSH=~/dev/.oh-my-zsh
+    PATH=/usr/local/sbin:$PATH
 fi
 
 plugins=(
