@@ -140,6 +140,8 @@ set rtp+=/usr/bin/fzf
 
 " Mappings
 let mapleader = ","
+" Save on double escape
+map <Esc><Esc> :noh<CR>:w<CR>
 " Clear search highlight
 nnoremap cs :noh<CR>
 " Exiting buffer / window
