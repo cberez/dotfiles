@@ -16,23 +16,18 @@ Plug 'gko/vim-coloresque'	      " Preview colors
 Plug 'tpope/vim-commentary'         " (Un)Comment lines
 Plug 'tpope/vim-fugitive'	    " Git cli in Vim
 Plug 'mhinz/vim-sayonara'           " Properly close buffers
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'             " FuzzyFinder in vim
 Plug 'chiedo/vim-case-convert'      " Easy text casing conversion
-" Plug 'Shougo/deoplete.nvim'         " Autocompletion
-Plug 'tpope/vim-eunuch'             " UNIX shell commands in vim
+" Plug 'tpope/vim-eunuch'             " UNIX shell commands in vim
 Plug 'airblade/vim-gitgutter'       " Git gutter in vim
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Completion
 Plug 'junegunn/goyo.vim'            " Distraction free mode
 
 " Language support
-Plug 'vim-syntastic/syntastic'      " Syntax checking for Vim
-" Plug 'GEverding/vim-hocon'          " Syntax coloration for HOCON (typesafe .conf files)
-Plug 'stephpy/vim-yaml'
-Plug 'chrisbra/csv.vim'	            " CSV
-" Plug 'moll/vim-node'                " Node.JS
-Plug 'pangloss/vim-javascript'      " JS
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'stephpy/vim-yaml'
+" Plug 'chrisbra/csv.vim'             " CSV
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
-" Plug 'hashivim/vim-terraform'       " Terraform
 
 call plug#end()
 
@@ -47,30 +42,18 @@ highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
 
 " Airline
+set t_Co=256
 let g:airline_powerline_fonts = 1	" Enable powerline fonts
 let g:airline_exclude_preview = 0	" Exclude preview windows of statusline update
 let g:airline_skip_empty_sections = 1 	" Do not draw separators of empty sections
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]' " Skip utf-8[unix] if expected
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_skip_empty_sections = 1
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-
-" Syntastic
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_aggregate_errors = 1
-" highlight SyntasticErrorSign guifg=white guibg=red
-
-" Deoplete
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#sources={}
-" let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips']
-" let g:deoplete#omni#input_patterns={}
 
 " NERDTree
 let NERDTreeShowHidden=1        " Show hidden files
@@ -185,3 +168,7 @@ nnoremap tf :tabfirst<CR>
 nnoremap ntr :NERDTreeToggle<CR>
 " Vim tagbar
 " nmap tgb :TagbarToggle<CR>
+
+" lua << EOF
+" require'lspconfig'.gopls.setup{}
+" EOF
