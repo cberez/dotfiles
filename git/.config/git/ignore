@@ -16,3 +16,9 @@ venv/
 
 # MacOS
 .DS_Store
+
+# ZSH
+.zcompdump
+
+# VIM
+.netrwhist
