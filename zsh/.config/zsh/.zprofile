@@ -11,6 +11,8 @@ export BROWSER="chromium"
 export TERMINAL="urxvt"
 export STATUSBAR="i3status"
 
+export LC_COLLATE="C" # Display . prefixed files/dirs on top in `ll`
+
 # ~/ cleaning
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
@@ -19,7 +21,12 @@ export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 export GOPATH=$XDG_DATA_HOME/go
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export NVM_DIR="$HOME/.config/nvm"
+export TMUX_CONFIG="$XDG_CONFIG_HOME"/tmux
+export DOTFILES="~/dotfiles"
 
+# env variables
+export DOCKER_BUILDKIT=1 # docker logs output aggregation
 
 if command -v systemctl &> /dev/null && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
