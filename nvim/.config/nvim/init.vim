@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }  " File system explorer 
 Plug 'gko/vim-coloresque'	      " Preview colors
 
 " Utilities
+Plug 'tpope/vim-obsession'                " Sessions
 Plug 'tpope/vim-commentary'         " (Un)Comment lines
 Plug 'tpope/vim-fugitive'	    " Git cli in Vim
 Plug 'mhinz/vim-sayonara'           " Properly close buffers
