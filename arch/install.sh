@@ -3,7 +3,7 @@
 # Install script to setup my needed packages after a fresh arch install, expects base-devel installed
 
 echo pacman -S sudo yay
-pacman -S yay
+pacman -S sudo yay
 
 echo # Network
 echo yay -S wpa_supplicant networkmanager network-manager-applet
@@ -26,8 +26,8 @@ echo yay -S i3 dmenu udisks2 udiskie tabbed
 yay -S i3 dmenu udisks2 udiskie tabbed
 
 echo # Shell
-echo yay -S rxvt-unicode oh-my-zsh zsh-theme-powerlevel9k
-yay -S rxvt-unicode oh-my-zsh zsh-theme-powerlevel9k
+echo yay -S rxvt-unicode alacritty oh-my-zsh zsh-theme-powerlevel9k tmux
+yay -S rxvt-unicode alacritty oh-my-zsh zsh-theme-powerlevel9k tmux
 
 echo # File browser
 echo yay -S pcmanfm
@@ -51,6 +51,6 @@ echo yay -S trash-cli htop fzf
 yay -S trash-cli htop fzf
 
 echo # Media
-echo yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox surf
-yay -S vlc thunderbird opera-developer chromium chromium-widevine dropbox surf
+echo yay -S vlc thunderbird firefox chromium chromium-widevine dropbox
+yay -S vlc thunderbird firefox chromium chromium-widevine dropbox
 
