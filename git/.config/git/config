@@ -46,3 +46,6 @@
     added = green
     changed = yellow
     untracked = cyan
+
+[include]
+    path=./local
