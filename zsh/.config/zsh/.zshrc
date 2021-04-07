@@ -57,7 +57,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
 # Aliases
 #-----------------------------
 alias pacman="pacman --color auto"
-if [ "$OSTYPE" != linux-gnu ]; then  # Is this the macOS system?
+if [ "$OSTYPE" != linux-gnu ]; then  # Is this not linux i.e. MacOS?
     alias ls=gls
 else
     alias pacman="pacman --color auto"
@@ -69,6 +69,7 @@ alias vim="nvim"
 alias v="vim"
 alias vimrc="vim $XDG_CONFIG_HOME/nvim/init.vim"
 alias zshrc="vim $ZDOTDIR/.zshrc"
+alias dotfiles="cd ~/dotfiles"
 
 alias tmux="tmux -f ~/.config/tmux/.tmux.conf"
 alias ta='tmux attach -t'
@@ -77,6 +78,12 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
+
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down"
+alias dcl="docker-compose logs"
+alias dclf="docker-compose logs --follow"
+alias dce="docker-compose exec"
 
 # ~/ cleaning
 alias mvn="mvn -gs $XDG_CONFIG_HOME/maven/settings.xml"
@@ -106,9 +113,9 @@ if [[ -d "$SCRIPTS_DIR" ]]; then
 fi
 
 # NVM
-# export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 #-------------------------------

@@ -24,6 +24,7 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export NVM_DIR="$HOME/.config/nvm"
 export TMUX_CONFIG="$XDG_CONFIG_HOME"/tmux
 export DOTFILES="~/dotfiles"
+export GEM_HOME="$XDG_DATA_HOME/gem"
 
 # env variables
 export DOCKER_BUILDKIT=1 # docker logs output aggregation
