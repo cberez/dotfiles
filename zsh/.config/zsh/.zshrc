@@ -140,3 +140,10 @@ fi
 # Key bindings
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+#-------------------------------
+# local RC
+#-------------------------------
+export LOCAL_RC=$ZSH_DIR/.localrc
+[[ -f ${LOCAL_RC} ]] && source ${LOCAL_RC}
+
