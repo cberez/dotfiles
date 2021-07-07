@@ -29,6 +29,9 @@ Plug 'junegunn/goyo.vim'            " Distraction free mode
 " Plug 'stephpy/vim-yaml'
 " Plug 'chrisbra/csv.vim'             " CSV
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go
+Plug 'vim-crystal/vim-crystal'      " Crystal
+Plug 'vim-ruby/vim-ruby'            " Ruby
+Plug 'ngmy/vim-rubocop'             " Rubocop setup for vim
 
 call plug#end()
 
@@ -166,7 +169,7 @@ nnoremap tf :tabfirst<CR>
 " ctags
 " nnoremap <leader><space> <C-]>
 " NERDTree
-nnoremap ntr :NERDTreeToggle<CR>
+" nnoremap ntr :NERDTreeToggle<CR>
 " Vim tagbar
 " nmap tgb :TagbarToggle<CR>
 
