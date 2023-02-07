@@ -23,3 +23,12 @@ venv/
 # VIM
 .netrwhist
 Session.vim
+
+# VScode
+.vscode
+
+# asdf
+.tool-versions
+
+# rubocop
+.rubocop.yml

@@ -1,6 +1,8 @@
 set nocompatible		" be iMproved, required
 filetype off			" required
 
+runtime snippets.vim            " load snippets
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Vim styling
@@ -16,7 +18,7 @@ Plug 'gko/vim-coloresque'	      " Preview colors
 Plug 'tpope/vim-obsession'                " Sessions
 Plug 'tpope/vim-commentary'         " (Un)Comment lines
 Plug 'tpope/vim-fugitive'	    " Git cli in Vim
-Plug 'mhinz/vim-sayonara'           " Properly close buffers
+" Plug 'mhinz/vim-sayonara'           " Properly close buffers
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'             " FuzzyFinder in vim
 Plug 'chiedo/vim-case-convert'      " Easy text casing conversion

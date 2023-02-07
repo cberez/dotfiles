@@ -1,4 +1,6 @@
 export TERM="xterm-256color"
+export GPG_TTY=$(tty) # for GPG compat
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 #-----------------------------
 # ZSH
@@ -37,7 +39,7 @@ if [ "$OSTYPE" = linux-gnu ]; then
     source /usr/share/zsh/plugins/alias-tips/alias-tips.plugin.zsh
     source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
   else
-    source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+    source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 # Theme
@@ -79,17 +81,12 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
-alias dcud="docker-compose up -d"
-alias dcd="docker-compose down"
-alias dcl="docker-compose logs"
-alias dclf="docker-compose logs --follow"
-alias dce="docker-compose exec"
-
-# ~/ cleaning
-alias mvn="mvn -gs $XDG_CONFIG_HOME/maven/settings.xml"
-alias sbt="sbt -ivy $XDG_DATA_HOME/ivy2 -sbt-dir $XDG_DATA_HOME/sbt"
-
-#alias mvn_find_corrupted="find $HOME/.m2/repository/ -name \"*jar\" | xargs -L 1 zip -T | grep error | grep 'structure invalid'"
+alias dcud="docker compose up -d"
+alias dcd="docker compose down"
+alias dcl="docker compose logs"
+alias dclf="docker compose logs --follow"
+alias dce="docker compose exec"
+alias dcps="docker compose ps"
 
 if [ "$OSTYPE" != linux-gnu ]; then  # Is this the macOS system?
     export PATH=$HOME/.local/gcloud/google-cloud-sdk/bin:$PATH
@@ -139,11 +136,10 @@ fi
 
 # Key bindings
 # ------------
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
 
 #-------------------------------
 # local RC
 #-------------------------------
 export LOCAL_RC=$ZSH_DIR/.localrc
 [[ -f ${LOCAL_RC} ]] && source ${LOCAL_RC}
-

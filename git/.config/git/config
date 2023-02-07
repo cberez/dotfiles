@@ -3,7 +3,8 @@
     name = Cesar Berezowski
 
 [alias]
-    lgb = log --graph --abbrev-commit --oneline --date=relative --branches --pretty=format:'%C(bold green)%h %d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    lgb = log --graph --abbrev-commit --oneline --branches --all
+    ldiff = log --full-diff --show-signature -p
     puo = "!git push -u origin \"$(git branch --show-current)\""
 
 [pull]
@@ -13,7 +14,13 @@
     helper = cache
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main
+
+[include]
+    path=./local
 
 # so much color
 [color]
@@ -46,6 +53,3 @@
     added = green
     changed = yellow
     untracked = cyan
-
-[include]
-    path=./local
