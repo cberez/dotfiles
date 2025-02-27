@@ -83,6 +83,7 @@ alias tkss='tmux kill-session -t'
 
 alias dcud="docker compose up -d"
 alias dcd="docker compose down"
+alias dcs="docker compose stop"
 alias dcl="docker compose logs"
 alias dclf="docker compose logs --follow"
 alias dce="docker compose exec"
@@ -91,7 +92,7 @@ alias dcps="docker compose ps"
 if [ "$OSTYPE" != linux-gnu ]; then  # Is this the macOS system?
     export PATH=$HOME/.local/gcloud/google-cloud-sdk/bin:$PATH
     export PATH=$GOPATH/bin:$PATH
-    # source $HOME/.local/gcloud/google-cloud-sdk/completion.zsh.inc
+    source $HOME/.local/gcloud/google-cloud-sdk/path.zsh.inc
 fi
 
 #-----------------------------
@@ -108,12 +109,6 @@ if [[ -d "$SCRIPTS_DIR" ]]; then
     }
   done
 fi
-
-# NVM
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 #-------------------------------
 # Proxy
@@ -143,3 +138,15 @@ source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
 #-------------------------------
 export LOCAL_RC=$ZSH_DIR/.localrc
 [[ -f ${LOCAL_RC} ]] && source ${LOCAL_RC}
+
+
+#-------------------------------
+# asdf execs
+#-------------------------------
+. ~/.local/share/asdf/plugins/golang/set-env.zsh
+
+export PATH="${XDG_DATA_HOME}/asdf/shims:${PATH}"
+
+export PATH="${XDG_DATA_HOME}/gem/bin:${PATH}"
+
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
