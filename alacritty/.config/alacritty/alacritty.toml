@@ -1,0 +1,22 @@
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 1
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = true
+
+[general]
+import = ["/Users/cesar/.config/alacritty/onedark.toml"]
